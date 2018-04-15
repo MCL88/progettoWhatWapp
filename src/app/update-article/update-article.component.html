@@ -1,0 +1,39 @@
+<h1 class="page-header">
+    Aggiorna Articolo
+  </h1>
+  
+  <form [formGroup]="formUpgrade" class="form-horizontal" (submit)="onArticleSubmit()">
+      <div class="control-group">
+          
+                <!-- Title -->
+                <label class="control-label"  for="title">Titolo</label>
+                <div class="controls">
+                  <input type="text" id="title" value={{article.title}} name="title" formControlName="title" placeholder="" class="input-xlarge">
+                </div>
+      </div>
+  
+      <div class="control-group">
+          
+                <!-- Autore -->
+                <label class="control-label"  for="author">Autore</label>
+                <div class="controls">
+                  <input type="text" id="author" value={{article.author}} name="author" formControlName="author" placeholder="" class="input-xlarge">
+                </div>
+      </div>
+  
+      <div class="control-group">
+          
+                <!-- Contenuto -->
+                <label class="control-label" for="content">Contenuto</label>
+                <div class="controls">
+                  <textarea type="text" id="content" cols="100%" rows="25" placeholder="" #textarea>{{article.content}}</textarea>
+                </div>
+      </div>
+                  
+              <div class="control-group">
+                <!-- Button -->
+                <div class="controls">
+                    <input (click) ="textArea = getTextArea(textarea.value)"  type="submit" value="Aggiorna Articolo"  class="btn btn-success" formControlName="confirm" name="confirm" >
+                </div>
+              </div>
+  </form>

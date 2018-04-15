@@ -1,0 +1,16 @@
+
+.insert-article
+{
+    text-align: center;
+}
+.info-article
+{
+    width: 600px;
+}
+
+.buttons
+{
+    position: relative;
+    top:-20px;
+    text-align: right;
+}

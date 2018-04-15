@@ -1,0 +1,23 @@
+p
+{
+    font-size:2rem;
+}
+
+.badge
+{
+    font-size:1.7rem
+}
+
+.buttons
+{
+    position: relative;
+    top:-50px;
+    text-align: right;
+}
+
+i
+{
+    margin: 10px;
+    color: black; 
+    font-size: 3rem;
+}

@@ -1,0 +1,14 @@
+<h1>Home</h1>
+
+<p class="insert-article" (click)="router.navigateByUrl('/new')" *ngIf="app.localStorageItem('logged')">Inserisci un nuovo articolo</p>
+<div *ngFor="let article of app.articles" class="list-group">
+    <section  href="#" class="list-group-item">
+      <div class="info-article">
+        <h4 class="list-group-item-heading">{{article.title}}</h4>
+        <p class="list-group-item-text">Scritto da {{article.author}} il {{article.date.toLocaleDateString()}} - {{article.date.getHours()}}:{{article.date.getMinutes()}}:{{article.date.getSeconds()}}</p>
+      </div>
+      <div class="buttons">
+        <p><a routerLink="/posts/{{article.id}}"><i class="fas fa-arrow-right"></i></a></p>
+      </div>
+    </section>
+</div>

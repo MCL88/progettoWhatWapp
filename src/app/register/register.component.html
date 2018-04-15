@@ -1,0 +1,44 @@
+<h1 class="page-header">
+  Login
+</h1>
+
+<form [formGroup]="form" class="form-horizontal" (submit)="onRegisterSubmit()">
+  <fieldset>
+    <div class="control-group">
+      <!-- Username -->
+      <label class="control-label"  for="username">Username</label>
+      <div  [ngClass]="{'has-error':(form.controls.username.errors && form.controls.username.dirty), 'has-success':(!form.controls.username.errors)}" class="controls">
+        <input type="text" id="username" name="username" formControlName="username" placeholder="" class="input-xlarge">
+        <ul class="help-block">
+          <li *ngIf="form.controls.username.errors?.required && form.controls.username.dirty">Questo Campo è necessario</li>
+          <li *ngIf="form.controls.username.errors?.minLength || form.controls.username.errors?.maxLength">Il campo deve avere almeno 5 caratteri fino ad un massimo di 10</li>
+        </ul>
+      </div>
+    </div>
+ 
+
+ 
+    <div class="control-group">
+      <!-- Password-->
+      <label class="control-label" for="password">Password</label>
+      <div [ngClass]="{'has-error':(form.controls.password.errors && form.controls.password.dirty), 'has-success':(!form.controls.password.errors)}" class="controls">
+        <input type="password" id="password" name="password" formControlName="password" class="input-xlarge">
+        <ul class="help-block">
+          <li *ngIf="form.controls.password.errors?.required && form.controls.password.dirty">Questo Campo è necessario</li>
+          <li *ngIf="form.controls.password.errors?.minLength || form.controls.password.errors?.maxLength">Il campo deve avere almeno 5 caratteri fino ad un massimo di 10</li>
+        </ul>
+      </div>
+    </div>
+ 
+ 
+    <div class="control-group">
+      <!-- Button -->
+      <div class="controls">
+        <input [disabled]="!form.valid" type="submit" value="Login"  class="btn btn-success" formControlName="confirm" name="confirm" >
+      </div>
+    </div>
+  </fieldset>
+</form>
+
+<p>Username:{{form.controls.username.value}} </p>
+<p>Password:{{form.controls.password.value}} </p>
